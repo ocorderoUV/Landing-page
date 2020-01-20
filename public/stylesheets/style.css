@@ -1,8 +1,31 @@
+
 #mainNav, h1  {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-family: Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: 700;
+}
+
+@media (min-width: 992px){
+  #mainNav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    transition: padding-top .3s,padding-bottom .3s;
+  }
+}
+
+@media (min-width: 992px){
+  #mainNav.navbar-shrink {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+}
+
+@media (min-width: 992px){
+    #mainNav .navbar-nav>li.nav-item>a.nav-link.active {
+    color: #fff;
+    background: #1abc9c;
+  }
 }
 
 #mainNav .navbar-brand {
@@ -54,6 +77,17 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:hover,button.bg-primar
   padding: .8rem;
 }
 
+.scroll-to-top {
+  z-index: 1042;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+}
+
+.position-fixed {
+  position: fixed!important;
+}
+
 .navbar-toggler {
   padding: .25rem .75rem;
   font-size: 1.25rem;
@@ -68,13 +102,10 @@ button, input {
 }
 
 /*Masthead*/
-@media (min-width: 992px){
-  .masthead {
-    padding-top: calc(6rem + 104px);
-    padding-bottom: 6rem; 
-  }
+.masthead .masthead-heading {
+  font-size: 2.75rem;
+  line-height: 2.5rem;
 }
-
 
 @media (min-width: 992px){
   .masthead .masthead-heading {
@@ -83,16 +114,12 @@ button, input {
   }
 }
 
-
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
 }
 
-.masthead .masthead-heading {
-  font-size: 2.75rem;
-  line-height: 2.75rem;
-}
+
 
 .font-weight-bolder {
   font-weight: bolder!important;
@@ -176,9 +203,6 @@ h1,h2 {
 
 }
 
-
-
-
 .page-section {
   padding: 6rem 0;
 }
@@ -207,7 +231,7 @@ h1,h2 {
   margin-right: auto!important;
 }
 
-.portfolio .portfolio-item {
+.portfolio-item {
   cursor: pointer;
   position: relative;
   display: block;
@@ -217,7 +241,7 @@ h1,h2 {
   overflow: hidden;
 }
 
-.portfolio .portfolio-item .portfolio-item-caption {
+.portfolio-item-caption {
   position: absolute;
   top: 0;
   left: 0;
@@ -228,6 +252,10 @@ h1,h2 {
 
 .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
   font-size: 1.5rem;
+}
+
+.portfolio-item-caption:hover{
+  opacity: 1;
 }
 
 .img-fluid {
@@ -261,7 +289,130 @@ img {
   overflow-y: auto;
 }
 
+
+
+.portafolio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all .2s ease-in-out;
+  opacity: 0;
+  background-color: rgba(26,188,156,.9);
+}
+    
+.portafolio:hover {
+  opacity: 1;
+}
+
+.portfolio-modal .close {
+  position: absolute;
+  z-index: 1;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: #1abc9c;
+  opacity: 1;
+}
+
 .fade {
   transition: opacity .15s linear;
 }
 
+.btn-xl {
+  padding: 1rem 1.75rem;
+  font-size: 1.25rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #148f77;
+  border-color: #1abc9c;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #148f77;
+  border-color: #12846e;
+}
+
+.btn-primary:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #148f77;
+  border-color: #1abc9c;
+}
+
+
+/* Contact */
+
+.floating-label-form-group input, .floating-label-form-group textarea {
+  font-size: 1.5em;
+  position: relative;
+  z-index: 1;
+  padding-right: 0;
+  padding-left: 0;
+  resize: none;
+  border: none;
+  border-radius: 0;
+  background: 0 0;
+  box-shadow: none!important;
+}
+
+.floating-label-form-group {
+  position: relative;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.btn-social {
+  border-radius: 100%;
+  display: inline-flex;
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Footer */
+
+.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+.copyright {
+  background-color: #1a252f;
+}
+
+element.style {
+  display: block;
+}
+
+.scroll-to-top {
+  z-index: 1042;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+}
+
+.position-fixed {
+  position: fixed!important;
+}
+
+@media (min-width: 992px){
+  .d-lg-none {
+    display: none!important;
+  }
+}
